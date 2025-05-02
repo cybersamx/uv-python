@@ -1,0 +1,13 @@
+services:
+  uv-python:
+    # Build
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # Keep it local (for now)
+    image: "uv-python"
+
+    # Interactive run
+    stdin_open: true
+    tty: true
