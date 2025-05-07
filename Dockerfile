@@ -59,7 +59,7 @@ RUN sh ./uv-installer.sh && rm ./uv-installer.sh
 
 # Configure pyenv
 ENV PYENV_ROOT="${HOME}/.pyenv"
-ENV PATH="${PYENV_ROOT}/bin:${PATH}"
+ENV PATH="${PYENV_ROOT}/bin:${HOME}/.local/bin:${PATH}"
 RUN eval "$(pyenv init -)"
 
 # Configure uv
@@ -84,5 +84,8 @@ RUN pyenv global 3.7.5
 # Shell prompt
 COPY --chown=${USER}:${USER} .bashrc .
 
+# Source the shell config file
+ENV PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${HOME}/.local/bin:${PATH}"
+
 # Run a shell for interactive mode
-CMD ["/bin/bash"]
+CMD ["/home/uv/.pyenv/shims/python3"]

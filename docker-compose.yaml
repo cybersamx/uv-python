@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
 
     # Keep it local (for now)
-    image: "uv-python"
+    image: "cybersamx/uv-python"
 
     # Interactive run
     stdin_open: true
