@@ -88,4 +88,4 @@ COPY --chown=${USER}:${USER} .bashrc .
 ENV PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${HOME}/.local/bin:${PATH}"
 
 # Run a shell for interactive mode
-CMD ["/home/uv/.pyenv/shims/python3"]
+CMD ["/bin/bash"]
